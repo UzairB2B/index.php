@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Uzair B2B Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* --- CSS Variables for Page Themes --- */
+        /* Default (Dark) Theme Variables */
+        :root {
+            --page-bg: #1A202C; /* Gray-900 */
+            --header-bg: #2D3748; /* Gray-800 */
+            --text-primary: #E2E8F0; /* Gray-200 */
+            --text-secondary: #CBD5E1; /* Gray-300 */
+            --accent-color: #6366F1; /* Indigo-500 */
+            --accent-hover-color: #8B5CF6; /* Violet-500 */
+            --card-bg: #2D3748; /* Gray-800 */
+            --card-shadow: rgba(0, 0, 0, 0.4);
+            --heading-glow: rgba(139, 92, 246, 0.5); /* Purple glow */
+            --link-color: #A78BFA; /* Indigo-400 */
+            --link-hover-color: #C4B5FD; /* Indigo-300 */
+            --border-color: #4A5568; /* Gray-700 for borders */
+            --section-bg-lighter: #2C3544; /* Slightly lighter dark for sub-sections */
+        }
+
+        /* Light Theme Variables (applied when 'html.light' class is active) */
+        html.light {
+            --page-bg: #F8FAFC; /* Gray-50 */
+            --header-bg: #FFFFFF; /* White */
+            --text-primary: #1A202C; /* Gray-900 */
+            --text-secondary: #4A5568; /* Gray-700 */
+            --accent-color: #4F46E5; /* Indigo-600 */
+            --accent-hover-color: #4338CA; /* Indigo-700 */
+            --card-bg: #FFFFFF; /* White */
+            --card-shadow: rgba(0, 0, 0, 0.1);
+            --heading-glow: rgba(79, 70, 229, 0.2); /* Blue glow */
+            --link-color: #4F46E5; /* Indigo-600 */
+            --link-hover-color: #3730A3; /* Indigo-800 */
+            --border-color: #E2E8F0; /* Gray-200 for borders */
+            --section-bg-lighter: #F1F5F9; /* Gray-100 */
+        }
+
+        /* --- General Page Styling (using variables) --- */
+        body {
+            background-color: var(--page-bg);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+            font-family: 'Inter', sans-serif; /* Recommended professional font */
+        }
+
+        header {
+            background-color: var(--header-bg);
+            transition: background-color 0.3s ease-in-out;
+            border-bottom: 1px solid var(--border-color); /* Subtle header border */
+        }
+
+        header a {
+            color: var(--text-secondary);
+        }
+
+        header a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Active link for Privacy Policy */
+        header a[href="privacy_policy.html"] { 
+            color: var(--link-color);
+        }
+
+        header button#theme-toggle {
+            background-color: var(--card-bg); /* Use card background for toggle */
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color); /* Subtle border */
+            box-shadow: 0 2px 8px var(--card-shadow);
+        }
+
+        header button#theme-toggle:hover {
+            background-color: var(--text-secondary); /* Darker on hover */
+            color: var(--text-primary);
+        }
+
+        /* --- Main Content Styling --- */
+        .policy-section {
+            background-color: var(--page-bg);
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .policy-main-heading {
+            color: var(--text-primary);
+            text-shadow: 0 5px 20px var(--heading-glow); /* Dynamic glow based on theme */
+            letter-spacing: -0.03em;
+        }
+
+        .policy-content-block {
+            background-color: var(--card-bg); /* Use card-bg for policy blocks */
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 5px 15px var(--card-shadow);
+            padding: 2.5rem; /* Generous padding */
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .policy-content-block h2 {
+            font-size: 1.75rem; /* text-3xl equivalent */
+            font-weight: 700; /* font-bold */
+            margin-bottom: 1.25rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--accent-color); /* Underline headings */
+            padding-bottom: 0.5rem;
+            display: inline-block; /* Make underline fit text */
+        }
+
+        .policy-content-block p {
+            margin-bottom: 1rem;
+            line-height: 1.75; /* leading-relaxed */
+            color: var(--text-secondary);
+        }
+
+        .policy-content-block ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-content-block ul li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .policy-content-block strong {
+            color: var(--accent-color); /* Highlight key terms */
+        }
+
+        .policy-highlight {
+            background-color: var(--section-bg-lighter); /* Slightly lighter background for highlights */
+            border-left: 5px solid var(--accent-color);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Optional: Font for better aesthetics */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-900 text-white font-inter antialiased transition-colors duration-300 ease-in-out">
+
+    <header class="bg-gray-800 py-4 shadow-lg">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white hover:text-indigo-400 transition-colors duration-300">
+                Uzair B2B Services.
+            </a>
+            <nav class="flex items-center space-x-6">
+                <a href="index.html" class="text-gray-300 hover:text-white font-medium transition-colors duration-300">Home</a>
+                <a href="policy.html" class="text-indigo-400 font-medium transition-colors duration-300">Privacy Policy</a>
+                
+                <button id="theme-toggle" class="p-2 rounded-full bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <svg class="w-6 h-6 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.325 6.675l-.707-.707M6.675 6.675l-.707-.707m10.65 0l-.707.707M6.675 17.325l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                    <svg class="w-6 h-6 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="py-16 policy-section">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-12 policy-main-heading">
+                Privacy Policy
+            </h1>
+            <p class="text-center text-lg mb-10 text-gray-400">
+                Last Updated: <span id="last-updated-date">July 20, 2025</span>
+            </p>
+
+            <div class="policy-content-block">
+                <p>Welcome to Uzair B2B Solutions. We are committed to protecting your privacy and ensuring a transparent and secure experience. This Privacy Policy outlines how we handle information, our service terms, and your rights concerning our B2B website development and digital solutions.</p>
+            </div>
+
+            <div class="policy-content-block mt-8">
+                <h2>1. Service Agreement & Payment Terms</h2>
+                <div class="policy-highlight">
+                    <p class="font-semibold text-lg">
+                        <strong>Important:</strong> Our service costs are unique to each project's scope and complexity. A precise quotation can only be provided after a detailed consultation and understanding of your specific requirements.
+                    </p>
+                    <ul class="list-disc ml-6 mt-4">
+                        <li><strong>Advance Payment:</strong> An advance payment of **50% to 30% (not below)** of the total project cost is mandatory to commence any work.</li>
+                        <li><strong>Project Preview:</strong> We will provide you with a sample or preview of your webpage/website for review and approval *before* the advance payment is due. This ensures you are satisfied with the initial direction.</li>
+                        <li><strong>Milestone Payments & Edits:</strong> Once the website development is completed to the agreed-upon specifications, we will present it to you for final review, edits, and changes as per your feedback.</li>
+                        <li><strong>Final Payment & Go-Live:</strong> The website will only be made live and the dashboard (in case of dynamic websites) will be provided upon receipt of the **full and final payment**.</li>
+                        <li><strong>Included Services:</strong> Our comprehensive website development services often include professional photo and video editing to enhance your site's visual appeal and content quality.</li>
+                        <li><strong>No Cancellation or Refund:</strong> Please note that once the advance payment has been submitted, **no cancellation or refund is allowed** under any circumstances. We commit resources and time upon receipt of your advance.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="policy-content-block mt-8">
+                <h2>2. Information We Collect</h2>
+                <p>We may collect information to understand your project needs and to communicate effectively:</p>
+                <ul>
+                    <li><strong>Personal Identification Information:</strong> Name, email address, phone number, company name, and address when you contact us via forms or email.</li>
+                    <li><strong>Project Details:</strong> Information related to your business requirements, project specifications, design preferences, and content shared for development purposes.</li>
+                    <li><strong>Technical Data:</strong> Information about your device and how you interact with our website (e.g., browser type, IP address, pages visited), collected via analytics tools.</li>
+                </ul>
+            </div>
+
+            <div class="policy-content-block mt-8">
+                <h2>3. How We Use Your Information</h2>
+                <p>The information we collect is used solely for the following purposes:</p>
+                <ul>
+                    <li>To understand your project needs and provide accurate quotations.</li>
+                    <li>To communicate with you regarding your project's progress, updates, and feedback.</li>
+                    <li>To deliver the services you have requested, including website development, design, and related digital solutions.</li>
+                    <li>To improve our website, services, and client experience.</li>
+                    <li>To send periodic emails regarding project updates or relevant information (you can opt-out at any time).</li>
+                </ul>
+            </div>
+
+            <div class="policy-content-block mt-8">
+                <h2>4. Data Security</h2>
+                <p>We are committed to ensuring the security of your data. We implement appropriate technical and organizational measures to protect your personal and project information against unauthorized access, alteration, disclosure, or destruction. This includes secure communication channels and restricted access to data.</p>
+            </div>
+
+            <div class="policy-content-block mt-8">
+                <h2>5. Data Sharing and Disclosure</h2>
+                <p>We do not sell, trade, or rent your personal identification information to others. We may share generic aggregated demographic information not linked to any personal identification information regarding visitors and users with our business partners, trusted affiliates, and advertisers for the purposes outlined above.</p>
+                <p>We may use third-party service providers to help us operate our business and the Site or administer activities on our behalf, such as sending out newsletters or surveys. We may share your information with these third parties for those limited purposes provided that you have given us your permission.</p>
+            </div>
+
+            <div class="policy-content-block mt-8">
+                <h2>6. Cookies and Tracking Technologies</h2>
+                <p>Our website may use "cookies" to enhance user experience. Your web browser places cookies on your hard drive for record-keeping purposes and sometimes to track information about them. You may choose to set your web browser to refuse cookies or to alert you when cookies are being sent. If you do so, note that some parts of the Site may not function properly.</p>
+            </div>
+
+            <div class="policy-content-block mt-8">
+                <h2>7. Your Rights</h2>
+                <p>You have the right to:</p>
+                <ul>
+                    <li>Request access to your personal data.</li>
+                    <li>Request correction of your personal data.</li>
+                    <li>Request erasure of your personal data.</li>
+                    <li>Object to processing of your personal data.</li>
+                    <li>Request restriction of processing your personal data.</li>
+                    <li>Request transfer of your personal data.</li>
+                    <li>Withdraw consent at any time where we are relying on consent to process your personal data.</li>
+                </ul>
+            </div>
+
+            <div class="policy-content-block mt-8">
+                <h2>8. Changes to This Privacy Policy</h2>
+                <p>Uzair B2B Solutions has the discretion to update this privacy policy at any time. When we do, we will revise the "last updated" date at the top of this page. We encourage Users to frequently check this page for any changes to stay informed about how we are helping to protect the personal information we collect. You acknowledge and agree that it is your responsibility to review this privacy policy periodically and become aware of modifications.</p>
+            </div>
+
+            <div class="policy-content-block mt-8">
+                <h2>9. Contacting Us</h2>
+                <p>If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us at:</p>
+                <p class="mt-4">
+                    <strong>Uzair B2B Solutions</strong><br>
+                    
+                    Email: uzairb2bservices@gmail.com<br>
+                    Phone: +91 9335723334
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 py-8 text-center text-gray-400 text-sm shadow-inner">
+        <div class="container mx-auto px-6">
+            <p>&copy; <span id="current-year"></span> Uzair B2B Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // console.log("DOM Content Loaded - script running on Privacy Policy page.");
+
+            // --- Theme Toggle Logic ---
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const htmlElement = document.documentElement; // Targets the <html> tag
+
+            if (themeToggleBtn) {
+                // Check for saved theme preference on load
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme) {
+                    htmlElement.classList.add(savedTheme);
+                } else {
+                    // Default to dark if no preference is saved
+                    htmlElement.classList.add('dark');
+                    localStorage.setItem('theme', 'dark'); // Save default preference
+                }
+
+                // Add event listener for the toggle
+                themeToggleBtn.addEventListener('click', function() {
+                    if (htmlElement.classList.contains('dark')) {
+                        htmlElement.classList.remove('dark');
+                        htmlElement.classList.add('light');
+                        localStorage.setItem('theme', 'light');
+                    } else {
+                        htmlElement.classList.remove('light');
+                        htmlElement.classList.add('dark');
+                        localStorage.setItem('theme', 'dark');
+                    }
+                });
+            }
+
+            // --- Current Year for Footer ---
+            const currentYearSpan = document.getElementById('current-year');
+            if (currentYearSpan) {
+                currentYearSpan.textContent = new Date().getFullYear();
+            }
+
+            // --- Update Last Updated Date (Optional) ---
+            const lastUpdatedDateSpan = document.getElementById('last-updated-date');
+            if (lastUpdatedDateSpan) {
+                // You can manually set this or fetch from a dynamic source
+                // For now, it's manually set in HTML to July 20, 2025
+            }
+        });
+    </script>
+</body>
+</html>

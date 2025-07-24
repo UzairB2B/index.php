@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Generator - Uzair B2B</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+
+        #certificate-container {
+            position: relative;
+            width: 800px;
+            height: 1100px;
+            margin: auto;
+        }
+
+        #certificate {
+            width: 100%;
+            display: block;
+        }
+
+        #name {
+            position: absolute;
+            top: 450px;  /* Adjusted to align correctly */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 36px;
+            font-weight: bold;
+            font-family: "Poppins", sans-serif;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            width: 80%;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 18px;
+            margin-top: 20px;
+            width: 60%;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background: #E63946;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #C02E3F;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Download Your Testimonial Certificate - UZAIR B2B</h1>
+    <p>Enter your name to generate your Bookmark:</p>
+    <input type="text" id="userName" placeholder="Enter Your Name" oninput="updateName()">
+    <button onclick="downloadCertificate()">Download Bookmark</button>
+
+    <div id="certificate-container">
+        <img id="certificate" src="Certificate.jpg" alt="Certificate">
+        <div id="name">Your Name</div>
+    </div>
+
+    <script>
+        function updateName() {
+            let name = document.getElementById("userName").value;
+            let nameField = document.getElementById("name");
+
+            if (name.length > 20) {
+                nameField.style.fontSize = "24px"; // Shrink font for long names
+            } else {
+                nameField.style.fontSize = "36px"; // Default font size
+            }
+            nameField.innerText = name || "Your Name";
+        }
+
+        function downloadCertificate() {
+            let container = document.getElementById("certificate-container");
+
+            html2canvas(container, { 
+                scale: 3,
+                useCORS: true,
+                allowTaint: true 
+            }).then(canvas => {
+                let imgData = canvas.toDataURL("image/png");
+                
+                // ✅ Use jsPDF correctly
+                const { jsPDF } = window.jspdf;
+                let pdf = new jsPDF("p", "mm", "a4");
+                let width = 210;
+                let height = (canvas.height * width) / canvas.width;
+                pdf.addImage(imgData, "PNG", 0, 0, width, height);
+                pdf.save("Uzair_B2B_Certificate.pdf");
+            }).catch(error => {
+                console.error("Error generating certificate:", error);
+                alert("Failed to generate PDF. Check console for details.");
+            });
+        }
+    </script>
+
+</body>
+</html>

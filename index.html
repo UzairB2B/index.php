@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-3419738696163511">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3419738696163511" crossorigin="anonymous"></script>
+    <title>PixelPerfect – Crafting Digital Excellence</title>
+    <meta name="title" content="PixelPerfect IT solutions Pvt. Ltd : Website Development, Mobile App Development, Software Solutions">
+    <meta name="description" content="Leading web development and mobile app development agency crafting stunning websites, robust web applications, and intuitive mobile experiences.">
+    <meta name="keywords" content="web development, mobile app development, software solutions, custom software, responsive design, website design, web applications, SEO, digital agency, Lucknow, Uttar Pradesh, India">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="author" content="PixelPerfect Team">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom styles to enhance Tailwind - Define your color palette, custom gradients, and fonts here.
+           Using @apply to leverage Tailwind's utility-first approach within custom CSS. */
+        body {
+            font-family: 'Poppins', sans-serif;
+            @apply text-gray-200; /* Default text color for a sleek dark theme */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .gradient-bg {
+            /* A subtle, dark gradient for the overall background */
+            background: linear-gradient(135deg, #1A202C 0%, #2D3748 100%);
+        }
+        .btn-primary {
+            /* Primary button style: bold, rounded, with hover effects and shadow for depth. */
+            @apply bg-indigo-600 text-white font-bold py-3 px-8 rounded-full hover:bg-indigo-700 transition duration-300 ease-in-out shadow-lg transform hover:scale-105;
+        }
+        .btn-secondary {
+            /* Secondary button style: outlined, with distinct hover effects. */
+            @apply bg-transparent border border-indigo-500 text-indigo-300 font-semibold py-3 px-8 rounded-full hover:bg-indigo-500 hover:text-white transition duration-300 ease-in-out transform hover:scale-105;
+        }
+        /* Custom scrollbar for a polished look (optional, but enhances "sexy") */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2D3748;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #667EEA;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5A67D8;
+        }
+        /* Hero section specific styles - for the background image and text overlay */
+        .hero-section {
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            /* Using a pseudo-element for a dark overlay to ensure text readability */
+            display: flex; /* Flexbox for centering content */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            text-align: center; /* Center text */
+        }
+        .hero-overlay::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+            z-index: 1; /* Below text, above background image */
+        }
+        .hero-content {
+            z-index: 2; /* Ensure content is above the overlay */
+            position: relative;
+        }
+        /* Custom styles for the service icons/sections */
+        .service-icon-box {
+            @apply bg-gray-800 p-6 rounded-lg shadow-xl flex flex-col items-center justify-center text-center transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gray-700 cursor-pointer;
+        }
+        .service-icon-box img {
+            @apply w-16 h-16 mb-4 filter drop-shadow-lg; /* Adjust icon size and add subtle shadow */
+        }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XKKB6VBVVS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XKKB6VBVVS');
+    </script>
+</head>
+<body class="gradient-bg min-h-screen antialiased">
+<link rel="stylesheet" href="style2.css">
+    <header class="fixed w-full z-50 bg-gray-900 bg-opacity-70 backdrop-filter backdrop-blur-lg shadow-xl">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-extrabold text-indigo-400 hover:text-indigo-300 transition duration-300">
+                Uzair B2B<span class="text-indigo-600">.</span>
+            </a>
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#services" class="text-gray-300 hover:text-indigo-400 font-semibold transition duration-300">Services</a>
+                <a href="#client" class="text-gray-300 hover:text-indigo-400 font-semibold transition duration-300">Client</a>
+                <a href="#about" class="text-gray-300 hover:text-indigo-400 font-semibold transition duration-300">About Us</a>
+                <a href="#update" class="text-gray-300 hover:text-indigo-400 font-semibold transition duration-300">News & Updates</a>
+                  <a href="#review" class="text-gray-300 hover:text-indigo-400 font-semibold transition duration-300">Reviews</a>
+                <a href="#contact" class="btn-primary">Contact Us</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-300 hover:text-indigo-400 focus:outline-none focus:text-indigo-400">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 py-4">
+            <a href="#services" class="block text-gray-200 hover:bg-gray-700 px-4 py-2 text-sm font-semibold">Services</a>
+            <a href="#client" class="block text-gray-200 hover:bg-gray-700 px-4 py-2 text-sm font-semibold">Client</a>
+            <a href="#about" class="block text-gray-200 hover:bg-gray-700 px-4 py-2 text-sm font-semibold">About Us</a>
+            <a href="#update" class="block text-gray-200 hover:bg-gray-700 px-4 py-2 text-sm font-semibold">News & Updates</a>
+            <a href="#review" class="block text-gray-200 hover:bg-gray-700 px-4 py-2 text-sm font-semibold">Reviews</a>
+            <a href="#contact" class="block text-gray-200 hover:bg-gray-700 px-4 py-2 text-sm font-semibold">Contact Us</a>
+        </div>
+    </header>
+
+    <div class="pt-24"></div>
+
+<section class="relative w-full h-screen flex items-center justify-center text-center overflow-hidden" id="image-carousel">
+  <!-- Slides will be dynamically inserted here -->
+
+  <!-- Hero Content -->
+  <div class="relative z-10 p-8 max-w-4xl mx-auto">
+    <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6 animate-fade-in-up">
+      CRAFTING DIGITAL EXCELLENCE. <br> YOUR VISION, OUR CODE.
+    </h1>
+    <p class="text-xl md:text-2xl text-gray-300 mb-10 animate-fade-in-up delay-200">
+      Turning ideas into impact — with smart web development, engaging content, digital marketing, and next-level visuals.
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 animate-fade-in-up delay-400">
+      <a href="#portfolio" class="btn-primary">View Our Work</a>
+      <a href="#testimonial" class="btn-secondary">Testimonials</a>
+    </div>
+  </div>
+
+  <!-- Navigation Dots -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10" id="dot-nav"></div>
+</section>
+
+
+    <section id="services" class="bg-gray-900 py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-white mb-12">Our Core Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-icon-box" onclick="showServiceDetail('cloud-apps')">
+                    <img src="images/flash_botton/wd.png" alt="Cloud Application Development" class="mb-4">
+                    <h3 class="text-xl font-semibold text-indigo-300 mb-2">Photo & Video Editing</h3>
+                    <p class="text-gray-400 text-sm">High-quality edits that capture attention and elevate your brand’s visual identity.</p>
+
+                </div>
+                <div class="service-icon-box" onclick="showServiceDetail('mobile-apps')">
+                    <img src="images/flash_botton/mobapp.png" alt="Mobile Apps Development" class="mb-4">
+                <h3 class="text-xl font-semibold text-indigo-300 mb-2">Website & Mobile App Development</h3>
+                 <p class="text-gray-400 text-sm">End-to-end development of websites and mobile apps with seamless performance and intuitive design.</p>
+
+                </div>
+                <div class="service-icon-box" onclick="showServiceDetail('edu-software')">
+                    <img src="images/flash_botton/co.png" alt="College / School Software" class="mb-4">
+                   <h3 class="text-xl font-semibold text-indigo-300 mb-2">School & College Management System</h3>
+                  <p class="text-gray-400 text-sm">Empowering educational institutions with efficient, digital-first administration tools.</p>
+
+                </div>
+                <div class="service-icon-box" onclick="showServiceDetail('industrial-auto')">
+                    <img src="images/flash_botton/auto.png" alt="Industrial Automation" class="mb-4">
+                 <h3 class="text-xl font-semibold text-indigo-300 mb-2">Industrial & Business Automation</h3>
+                <p class="text-gray-400 text-sm">From POS systems to inventory and billing—smart software solutions tailored for small and medium business / industries.</p>
+                </div>
+                <div class="service-icon-box" onclick="showServiceDetail('corporate-training')">
+                    <img src="images/flash_botton/training.png" alt="Corporate Training" class="mb-4">
+               <h3 class="text-xl font-semibold text-indigo-300 mb-2">Corporate Training</h3>
+               <p class="text-gray-400 text-sm">
+               Future-proof your team with hands-on training in AI, cybersecurity, and cutting-edge digital skills tailored for corporate growth.
+               </p>
+
+                </div>
+                <div class="service-icon-box" onclick="showServiceDetail('our-clients')">
+                    <img src="images/flash_botton/clients.png" alt="Our Clients" class="mb-4">
+               <h3 class="text-xl font-semibold text-indigo-300 mb-2">Most Affordable Digital Solutions</h3>
+                <p class="text-gray-400 text-sm">
+                  Delivering top-tier services at unbeatable prices — the most affordable and trusted choice across Uttar Pradesh and Purvanchal.
+                 </p>
+
+                </div>
+            </div>
+            <div id="service-detail-area" class="mt-12 bg-gray-800 p-8 rounded-lg shadow-inner hidden">
+                <h3 id="service-detail-title" class="text-3xl font-bold text-indigo-400 mb-4"></h3>
+                <p id="service-detail-description" class="text-gray-300 leading-relaxed text-lg mb-6"></p>
+                <a id="service-detail-link" href="#" class="btn-primary inline-block">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+<section class="partners-marquee-section">
+    <div class="partners-container">
+        <div class="partners-marquee-wrapper">
+            <div class="partners-marquee-content">
+                <!-- Original set of images -->
+                <div class="partner-logo-item">
+                    <img src="https://images.seeklogo.com/logo-png/49/2/startup-india-hub-logo-png_seeklogo-496693.png" alt="STARTUP INDIA Logo 1" class="partner-logo-img">
+                </div>
+                <div class="partner-logo-item">
+                    <img src="https://aartisto.com/wp-content/uploads/2020/11/msme1.png" alt="MSME" class="partner-logo-img">
+                </div>
+                <div class="partner-logo-item">
+                    <img src="https://www.startinup.up.gov.in/crm/assets/website/assets/Home_files/upstart_logo.png" alt="start in up" class="partner-logo-img">
+                </div>
+                <!-- Duplicate the set of images for seamless looping -->
+                <div class="partner-logo-item">
+                    <img src="https://images.seeklogo.com/logo-png/49/2/startup-india-hub-logo-png_seeklogo-496693.png" alt="STARTUP INDIA Logo 1" class="partner-logo-img">
+                </div>
+                <div class="partner-logo-item">
+                    <img src="https://aartisto.com/wp-content/uploads/2020/11/msme1.png" alt="MSME" class="partner-logo-img">
+                </div>
+                <div class="partner-logo-item">
+                    <img src="https://www.startinup.up.gov.in/crm/assets/website/assets/Home_files/upstart_logo.png" alt="start in up" class="partner-logo-img">
+                </div>
+                 <!-- Add more duplicates if you have many logos and want a longer loop segment -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about-section-v3">
+    <div class="about-container-plain">
+        <div class="about-grid-wrapper-v3">
+            <div class="about-text-column-v3">
+                <h2 class="about-heading-v3 animate-fade-in-left">
+                    Welcome to <span class="about-highlight-v3">Uzair Business to Business Services.</span>
+                </h2>
+                <h4 class="about-subheading-v3 animate-fade-in-left delay-100">
+                    Your Partner in Digital Innovation.
+                </h4>
+               <p class="about-paragraph-v3 animate-fade-in-left delay-200">
+                 At <strong class="about-strong-v3">Uzair B2B Services</strong>, we are a passionate and multidisciplinary team of web developers, app creators, content editors, designers, and digital marketing strategists committed to transforming ideas into impactful digital experiences. With deep expertise in crafting innovative solutions, we aim to empower businesses, educational institutions, and individuals alike to stand out in the digital era. Our work blends technical excellence with creative vision, helping our clients communicate better, operate more efficiently, and grow faster. From building high-performance websites to delivering visually captivating photo and video content, we believe in designing experiences that leave a lasting impression.
+                  </p>
+                <p class="about-paragraph-v3 animate-fade-in-left delay-300">
+                   We offer a comprehensive suite of services including <strong class="about-strong-v3">custom website development</strong>, <strong class="about-strong-v3">mobile app development</strong>, <strong class="about-strong-v3">professional photo and video editing</strong>, <strong class="about-strong-v3">digital marketing</strong>, <strong class="about-strong-v3">poster and content creation</strong>, and even software solutions tailored for industries and educational organizations. Every project we undertake is shaped by a collaborative process — starting from concept validation and strategic consultation, to design, development, and seamless delivery. At Uzair B2B Services, we believe in building long-term relationships and providing high-quality, budget-friendly solutions that meet your unique requirements. Our goal is not just to create great digital products, but to help you grow, engage, and lead in your niche with confidence. Whether you're a startup or an established organization, we’re here to elevate your digital presence — affordably, creatively, and effectively.
+                   </p>
+
+                <a href="#portfolio" class="about-button-v3 animate-fade-in-left delay-400">
+                    Discover Our Work
+                </a>
+            </div>
+
+            <div class="about-image-column-v3 animate-fade-in-right">
+                <img src="IMAGE/phone holder.jpg"
+                     alt="Digital Innovation at Work"
+                     class="about-image-v3">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="bg-indigo-700 py-16 text-white text-center">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto">
+               <h2 class="text-4xl font-bold mb-4">Empowering Education & Business, Affordably.</h2>
+              <h3 class="text-xl font-semibold opacity-90 mb-8">Feature-Rich Management Software — Starting at Just ₹7,000</h3>
+              <p class="text-lg opacity-80 mb-10">
+              Designed for schools, colleges, and businesses — streamline admissions, finance, inventory, and operations with ease. Unlock the power of automation and take your institution to the next level — without breaking the bank.
+              </p>
+
+                <a href="https://wa.link/fx3cg0" class="btn-secondary bg-white text-indigo-700 hover:bg-indigo-800 hover:text-white border-white hover:border-indigo-800">Click Here to Contact</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-900 py-12 border-t border-b border-gray-700">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <a href="#services" class="flex flex-col items-center group">
+                    <img src="images/service.png" alt="Our Services" class="w-16 h-16 mb-3 group-hover:scale-110 transition duration-300 filter drop-shadow">
+                    <span class="text-lg font-semibold text-gray-200 group-hover:text-indigo-400 transition duration-300">Our Services</span>
+                    <span class="text-indigo-400 text-sm mt-1 group-hover:underline">Click Here &gt;</span>
+                </a>
+                <a href="#portfolio" class="flex flex-col items-center group">
+                    <img src="images/portfolio.png" alt="Our Portfolio" class="w-16 h-16 mb-3 group-hover:scale-110 transition duration-300 filter drop-shadow">
+                    <span class="text-lg font-semibold text-gray-200 group-hover:text-indigo-400 transition duration-300">Our Portfolio</span>
+                    <span class="text-indigo-400 text-sm mt-1 group-hover:underline">View &gt;</span>
+                </a>
+                <a href="#client" class="flex flex-col items-center group">
+                    <img src="images/approach.png" alt="Our Clients" class="w-16 h-16 mb-3 group-hover:scale-110 transition duration-300 filter drop-shadow">
+                    <span class="text-lg font-semibold text-gray-200 group-hover:text-indigo-400 transition duration-300">Our Clients</span>
+                    <span class="text-indigo-400 text-sm mt-1 group-hover:underline">Click Here &gt;</span>
+                </a>
+                <a href="https://wa.me/9335723334" class="flex flex-col items-center group">
+                    <img src="images/timer.png" alt="Get In Touch" class="w-16 h-16 mb-3 group-hover:scale-110 transition duration-300 filter drop-shadow">
+                    <span class="text-lg font-semibold text-gray-200 group-hover:text-indigo-400 transition duration-300">Get In Touch</span>
+                    <span class="text-indigo-400 text-sm mt-1 group-hover:underline">Contact Me &gt;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="client" class="bg-gray-800 py-16">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center text-white mb-12">Trusted By Leading Brands</h2>
+
+    <div class="overflow-hidden relative">
+      <div id="logoMarquee" class="flex animate-marquee hover:pause"></div>
+    </div>
+
+    <div class="text-center mt-10">
+    <div class="text-center mt-12">
+      <a href="client.html" class="btn-secondary">See all Clients</a>
+    </div>
+    </div>
+  </div>
+
+  <style>
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      animation: marquee 30s linear infinite;
+    }
+    .hover\:pause:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</section>
+
+    <!-- OUR LATEST PROJECT SECTION -->
+<section id="portfolio" class="bg-gray-900 py-16">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center text-white mb-12">Our Latest Projects</h2>
+    
+    <!-- Dynamic Project Cards Load Here -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- JavaScript will inject cards here -->
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="portfolio.html" class="btn-secondary">Explore Our Full Portfolio</a>
+    </div>
+  </div>
+</section>
+
+
+    <section id="update" class="social-media-section bg-gray-900 py-12 md:py-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-center text-white mb-8 md:mb-12 futuristic-heading">
+            SOCIAL MEDIA UPDATES
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="social-card instagram-card bg-gray-800 rounded-lg shadow-xl overflow-hidden p-6 flex flex-col items-center justify-center">
+                <h3 class="text-xl font-bold text-white mb-4">Instagram Updates</h3>
+                <div class="iframe-container w-full aspect-w-16 aspect-h-9 md:aspect-w-1 md:aspect-h-1" style="max-height: 400px; max-width: 340px;">
+                    <iframe src="https://www.instagram.com/uzairb2b/embed" frameborder="0" scrolling="no" allowtransparency="true" class="w-full h-full rounded-md shadow-lg"></iframe>
+                </div>
+            </div>
+
+            <div class="social-card facebook-card bg-gray-800 rounded-lg shadow-xl overflow-hidden p-6 flex flex-col items-center justify-center">
+                <h3 class="text-xl font-bold text-white mb-4">Facebook Updates</h3>
+                <div class="iframe-container w-full aspect-w-16 aspect-h-9 md:aspect-w-1 md:aspect-h-1" style="max-height: 400px; max-width: 340px;">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/profile.php?id=61572256829850&tabs=timeline&width=340&height=500"
+                            frameborder="0" scrolling="no" allowtransparency="true" class="w-full h-full rounded-md shadow-lg"></iframe>
+                </div>
+            </div>
+
+           <div id="news-section" class="social-card news-card bg-gray-800 rounded-lg shadow-xl overflow-hidden p-6 flex flex-col items-center justify-center animate-slide-up">
+              <h3 class="text-xl font-bold text-white mb-4">Latest News</h3>
+                  <div class="iframe-container w-full aspect-w-16 aspect-h-9 md:aspect-w-1 md:aspect-h-1" style="max-height: 400px; max-width: 340px;">
+            <div id="news-container" class="space-y-4 w-full max-w-xs text-white text-sm">
+    <!-- News items will be injected here -->
+  </div>
+</div>
+</div>
+
+
+        </div>
+    </div>
+</section>
+
+
+<section id="testimonial" class="testimonial-section-wrapper bg-gray-900 py-16 px-4 sm:px-6 lg:px-8">
+    <div id="testimonial-section" class="bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-2xl shadow-2xl w-full max-w-2xl mx-auto p-6 md:p-8 lg:p-10 transform hover:scale-[1.005] transition duration-300 ease-in-out border border-gray-700">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-8 text-white tracking-tight leading-tight testimonial-heading">
+            What Our Clients Say
+        </h2>
+        <div id="testimonial-container" class="relative min-h-[12rem] flex items-center justify-center overflow-hidden">
+            </div>
+    </div>
+</section>
+
+
+<section id="videos" class="education-section bg-gray-900 py-16 px-4 sm:px-6 lg:px-8 text-white">
+  <div class="container mx-auto">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-center uppercase mb-8 education-heading">
+      VIDEOS
+    </h2>
+
+    <div id="video-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+      <!-- Videos will load here -->
+    </div>
+  </div>
+</section>
+
+
+<section id="gallery" class="education-section bg-black py-16 px-4 sm:px-6 lg:px-8 text-white">
+  <div class="container mx-auto">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-center uppercase mb-8 education-heading">
+      GALLERY PHOTOS
+    </h2>
+
+    <div id="photo-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      <!-- Photos will load here -->
+    </div>
+  </div>
+</section>
+
+
+
+<section id="review" class="google-reviews-section py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200" aria-label="Google Testimonials">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-gray-900 dark:text-white">
+      Google Reviews
+    </h2>
+
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6 md:p-8 border border-gray-200 dark:border-gray-700">
+      <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center space-x-3">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" alt="Google" class="h-6 md:h-8 w-auto">
+          <span class="text-2xl font-semibold text-gray-700 dark:text-gray-300">Reviews</span>
+        </div>
+        <div class="text-yellow-500 flex items-center space-x-1 text-lg md:text-xl">
+          <span id="avg-rating">⭐⭐⭐⭐⭐</span>
+          <span class="text-gray-600 dark:text-gray-400 font-bold ml-1" id="avg-score">(0.0)</span>
+        </div>
+      </div>
+
+      <p class="text-sm text-gray-600 dark:text-gray-400 mb-8">
+        Based on <span id="total-reviews">0</span> reviews
+      </p>
+
+      <div class="space-y-8" id="reviews-list">
+        <p class="text-gray-500 text-sm">Loading reviews...</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Google Map Section -->
+<section class="google-map-section bg-gray-900 py-16 px-4 sm:px-6 lg:px-8 text-white">
+    <div class="container mx-auto max-w-7xl">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-white map-heading">
+            Location
+        </h2>
+        <div class="map-box-wrapper rounded-xl overflow-hidden shadow-2xl border border-gray-700">
+            <!-- Aspect Ratio Wrapper for Responsive Map -->
+            <div class="aspect-w-16 aspect-h-9">
+                <iframe src="https://maps.google.com/maps?q=CK43/71K, Govindpura, Chattatale Chowk, Varanasi, Uttar Pradesh, 221001&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        width="100%" height="400" loading="lazy"
+                        class="w-full h-full border-0"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Sexy 3D Contact Section -->
+<section class="contact-info-section bg-gray-800 py-16 px-4 sm:px-6 lg:px-8 text-white">
+    <div class="container mx-auto max-w-7xl">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-white contact-heading">
+            Contact Information
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 contact-grid">
+            <!-- Phone Number -->
+            <div class="contact-box phone-box bg-gray-700 rounded-xl shadow-xl p-8 flex flex-col items-center text-center group">
+                <i class="fas fa-phone-alt text-5xl mb-4 text-indigo-400 contact-icon"></i>
+                <h4 class="text-2xl font-bold mb-2 text-white contact-title">Phone</h4>
+                <p class="text-gray-300 text-lg contact-detail">
+                    <a href="tel:+919335723334" class="hover:text-indigo-300 transition duration-300">+91 93357 23334</a>
+                </p>
+            </div>
+            <!-- Address -->
+            <div class="contact-box address-box bg-gray-700 rounded-xl shadow-xl p-8 flex flex-col items-center text-center group">
+                <i class="fas fa-map-marker-alt text-5xl mb-4 text-indigo-400 contact-icon"></i>
+                <h4 class="text-2xl font-bold mb-2 text-white contact-title">Address</h4>
+                <p class="text-gray-300 text-lg contact-detail">CK 43/71k, Chattatale Chowk, Varanasi</p>
+            </div>
+            <!-- Gmail -->
+            <div class="contact-box email-box bg-gray-700 rounded-xl shadow-xl p-8 flex flex-col items-center text-center group">
+                <i class="fas fa-envelope text-5xl mb-4 text-indigo-400 contact-icon"></i>
+                <h4 class="text-2xl font-bold mb-2 text-white contact-title">Email</h4>
+                <p class="text-gray-300 text-lg contact-detail">
+                    <a href="mailto:uzairb2bservices@gmail.com" class="hover:text-indigo-300 transition duration-300">uzairb2bservices@gmail.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Enquiry Form Section (Static) -->
+<section id="contact" class="enquiry-section-static bg-gray-900 py-16 px-4 sm:px-6 lg:px-8 text-white">
+    <div class="container mx-auto max-w-2xl">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-white enquiry-heading">
+            Enquiry Form
+        </h2>
+
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSd-pamPXxSEl2krueZIfTyHeWslOWWbzR9Zld62vw9cEVW0xA/formResponse"
+              id="enquiryForm" method="POST" target="_self" class="mt-8 glassmorphism">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                <div>
+                    <label for="name" class="block text-gray-300 text-sm font-semibold mb-2 form-label">Full Name</label>
+                    <input type="text" id="name" name="entry.185435417" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent animated-input" placeholder="Enter your name" required>
+                </div>
+                <div>
+                    <label for="email" class="block text-gray-300 text-sm font-semibold mb-2 form-label">Email Address</label>
+                    <input type="email" id="email" name="entry.122919053" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent animated-input" placeholder="Enter your email" required>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                <div>
+                    <label for="contact" class="block text-gray-300 text-sm font-semibold mb-2 form-label">Contact Number</label>
+                    <input type="tel" id="contact" name="entry.1395817333" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent animated-input" placeholder="Enter your contact number" required>
+                </div>
+                <div>
+                    <label for="address" class="block text-gray-300 text-sm font-semibold mb-2 form-label">Address</label>
+                    <input type="text" id="address" name="entry.1517498010" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent animated-input" placeholder="Enter your address" required>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <label for="message" class="block text-gray-300 text-sm font-semibold mb-2 form-label">Enquiry Details</label>
+                <textarea id="message" name="entry.2006096137" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent animated-input" rows="4" placeholder="Enter your enquiry details" required></textarea>
+            </div>
+
+            <div class="text-center pt-4">
+                <button type="submit" class="inline-flex items-center justify-center px-8 py-4 bg-indigo-600 text-white font-bold rounded-full shadow-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition-all duration-300 ease-in-out text-lg transform hover:scale-105 btn-glow">
+                    Send Enquiry
+                </button>
+            </div>
+
+        </form>
+    </div>
+</section>
+
+
+
+
+
+    <footer class="bg-gray-900 py-16 border-t border-gray-700">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="col-span-1 md:col-span-2 text-center md:text-left">
+                    <img src="images/logo-footer.png" alt="PixelPerfect Logo" class="w-48 mx-auto md:mx-0 mb-6 filter brightness-150">
+                    <p class="text-gray-400 leading-relaxed text-sm">
+                        Uzair B2B Services is dedicated to crafting innovative digital experiences that drive growth and success for businesses worldwide. Your digital journey starts here.
+                    </p>
+                </div>
+                <div class="text-center md:text-left">
+                    <h3 class="text-xl font-bold text-white mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="certificate.html" class="text-gray-400 hover:text-indigo-400 transition duration-300 text-sm">Rating Certificate Download</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-indigo-400 transition duration-300 text-sm">About Us</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-indigo-400 transition duration-300 text-sm">Services</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-indigo-400 transition duration-300 text-sm">Portfolio</a></li>
+                        <li><a href="#client" class="text-gray-400 hover:text-indigo-400 transition duration-300 text-sm">Clients</a></li>
+                        <li><a href="#update" class="text-gray-400 hover:text-indigo-400 transition duration-300 text-sm">Updates</a></li>
+                        <li><a href="#videos" class="text-gray-400 hover:text-indigo-400 transition duration-300 text-sm">Videos</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-indigo-400 transition duration-300 text-sm">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <h3 class="text-xl font-bold text-white mb-6">Connect With Us</h3>
+                    <ul class="space-y-3 mb-6">
+                        <li><a href="#contact" class="text-gray-400 hover:text-indigo-400 transition duration-300 text-sm">Enquiry Form</a></li>
+                        <li><a href="https://wa.link/ggjs5r" class="text-gray-400 hover:text-indigo-400 transition duration-300 text-sm">Contact Us</a></li>
+                        <li><a href="policy.html" class="text-gray-400 hover:text-indigo-400 transition duration-300 text-sm">Privacy Policy</a></li>
+                    </ul>
+
+<br>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="#" target="_blank" class="text-gray-400 hover:text-indigo-500 transition duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="#" target="_blank" class="text-gray-400 hover:text-red-600 transition duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19.812 5.05A3.195 3.195 0 0017.394 2H6.606A3.195 3.195 0 004.188 5.05C2.863 6.643 2 8.653 2 12c0 3.347.863 5.357 2.188 6.95A3.195 3.195 0 006.606 22h10.788a3.195 3.195 0 002.418-2.95C21.137 17.357 22 15.347 22 12c0-3.347-.863-5.357-2.188-6.95zM9.992 15.424V8.576l6.6 3.424-6.6 3.424z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="#" target="_blank" class="text-gray-400 hover:text-blue-400 transition duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.193 5.617c-.694.307-1.442.513-2.228.61a4.677 4.677 0 00-3.418-1.439c-2.43 0-4.407 1.977-4.407 4.407 0 .346.039.682.112 1.006A12.516 12.516 0 013 5.304v.56a4.407 4.407 0 001.208 3.328c-.61-.019-1.18-.19-1.68-.465v.055c0 2.146 1.528 3.93 3.546 4.34a4.407 4.407 0 01-1.996.076c.563 1.75 2.193 3.024 4.12 3.06A8.823 8.823 0 013 20.25c-1.17 0-2.3-.069-3.4-.202a12.548 12.548 0 006.878 2.016c8.253 0 12.775-6.834 12.775-12.775 0-.195-.005-.389-.013-.582.699-.505 1.303-1.134 1.782-1.859z" /></svg>
+                        </a>
+                        <a href="#" target="_blank" class="text-gray-400 hover:text-pink-500 transition duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.008 3.769.055 1.058.047 1.724.253 2.217.436.67.254 1.25.599 1.743 1.092.5.493.848 1.073 1.092 1.743.183.493.389 1.159.436 2.217.047.985.055 1.33.055 3.769s-.008 2.784-.055 3.769c-.047 1.058-.253 1.724-.436 2.217-.254.67-.599 1.25-1.092 1.743-.493.5-1.073.848-1.743 1.092-.493.183-1.159.389-2.217.436-.985.047-1.33.055-3.769.055s-2.784-.008-3.769-.055c-1.058-.047-1.724-.253-2.217-.436-.67-.254-1.25-.599-1.743-1.092-.5-.493-.848-1.073-1.092-1.743-.183-.493-.389-1.159-.436-2.217-.047-.985-.055-1.33-.055-3.769s.008-2.784.055-3.769c.047-1.058.253-1.724.436-2.217.254-.67.599-1.25 1.092-1.743.493-.5 1.073-.848 1.743-1.092.493-.183 1.159-.389 2.217-.436.985-.047 1.33-.055 3.769-.055zm0 2.163c-2.464 0-2.84.01-3.857.059-1.066.052-1.636.248-1.928.358-.359.13-.67.298-.94.568-.27.27-.439.58-.568.94-.11.292-.306.862-.358 1.928-.049 1.017-.059 1.393-.059 3.857s.01 2.84.059 3.857c.052 1.066.248 1.636.358 1.928.13.359.298.67.568.94.27.27.58.439.94.568.292.11.862.306 1.928.358 1.017.049 1.393.059 3.857.059s2.84-.01 3.857-.059c1.066-.052 1.636-.248 1.928-.358.359-.13.67-.298.94-.568.27-.27.439-.58.568-.94.11-.292.306-.862.358-1.928.049-1.017.059-1.393.059-3.857s-.01-2.84-.059-3.857c-.052-1.066-.248-1.636-.358-1.928-.13-.359-.298-.67-.568-.94-.27-.27-.58-.439-.94-.568-.292-.11-.862-.306-1.928-.358C15.155 2.01 14.78 2 12.315 2zM12 7.564A4.436 4.436 0 1016.436 12 4.436 4.436 0 0012 7.564zm0 2.163A2.273 2.273 0 119.727 12 2.273 2.273 0 0112 9.727z" clip-rule="evenodd" /></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-500 text-sm">
+               <p>&copy; <span id="current-year"><script>document.write(new Date().getFullYear())</script></span> Uzair B2B Services. All rights reserved.</p>
+              <p class="mt-2">Ck 43/71k, Chattatale, Chowk, Varanasi, Uttar Pradesh 221001, India</p>
+              <p class="mt-2">Call Us: <a href="tel:+919335723334" class="text-indigo-400 hover:underline">+91 933572-3334</a></p>
+                 </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                if (document.getElementById('mobile-menu').classList.contains('flex')) {
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                    document.getElementById('mobile-menu').classList.remove('flex');
+                }
+            });
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        // Hero Section Slider Logic (Basic Example)
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.querySelectorAll('[id^="slide-"]');
+            let dots = document.querySelectorAll('.bottom-8 button');
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.add('opacity-0');
+                slides[i].classList.remove('opacity-100');
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove('opacity-100');
+                dots[i].classList.add('opacity-50');
+            }
+            slides[slideIndex - 1].classList.add('opacity-100');
+            slides[slideIndex - 1].classList.remove('opacity-0');
+            dots[slideIndex - 1].classList.add('opacity-100');
+            dots[slideIndex - 1].classList.remove('opacity-50');
+        }
+
+        // Auto-advance slider (optional)
+        setInterval(() => {
+            plusSlides(1);
+        }, 8000); // Change image every 8 seconds
+
+        // Services Detail Display
+        const serviceDetails = {
+            'cloud-apps': {
+                title: 'Robust Cloud & Online Application Development',
+                description: 'We specialize in building scalable, secure, and high-performance web applications and cloud solutions. From custom enterprise software to SaaS platforms, our expertise ensures your online presence is powerful and efficient. We leverage modern frameworks and cloud infrastructure to deliver solutions that grow with your business.',
+                link: 'web_development.html'
+            },
+            'mobile-apps': {
+                title: 'Intuitive Mobile Application Development',
+                description: 'Unlock the power of mobile with our expert app development services. We create stunning and functional native (iOS & Android) and hybrid mobile applications that provide seamless user experiences. Whether for consumers or internal operations, our apps are designed for performance and user engagement.',
+                link: 'mobile_apps.html'
+            },
+            'edu-software': {
+                title: 'Comprehensive College / School Management Software',
+                description: 'Revolutionize your educational institution with our tailored management software. Our solutions simplify administrative tasks, enhance communication between staff, students, and parents, and provide robust tools for academic management, admissions, attendance, and more. Future-proof your institute with a smart digital platform.',
+                link: 'college_online.html'
+            },
+            'industrial-auto': {
+                title: 'Cutting-Edge Industrial Automation Solutions',
+                description: 'Optimize your industrial processes with our advanced automation solutions. We design and implement control systems that enhance efficiency, reduce human error, and improve safety. From IoT integration to custom software for machinery, we bring intelligence to your operations.',
+                link: 'insitute_online.html' // Assuming this link leads to more details on automation
+            },
+            'corporate-training': {
+                title: 'Empowering Corporate Training Programs',
+                description: 'Invest in your team’s future with our customized corporate training programs. We offer hands-on workshops and courses in the latest technologies, project management, and essential soft skills. Our training empowers your employees with the knowledge and abilities to drive innovation and productivity.',
+                link: '#' // Link to a corporate training page
+            },
+            'our-clients': {
+                title: 'Our Valued Clientele & Success Stories',
+                description: 'Our success is built on the success of our clients. We’ve had the privilege of partnering with a diverse range of businesses, from startups to large enterprises, helping them achieve their digital goals. Explore our client showcase to see the impact of our work.',
+                link: 'clients.html'
+            }
+        };
+
+        function showServiceDetail(serviceKey) {
+            const detailArea = document.getElementById('service-detail-area');
+            const detailTitle = document.getElementById('service-detail-title');
+            const detailDescription = document.getElementById('service-detail-description');
+            const detailLink = document.getElementById('service-detail-link');
+
+            const service = serviceDetails[serviceKey];
+
+            if (service) {
+                detailTitle.textContent = service.title;
+                detailDescription.textContent = service.description;
+                detailLink.href = service.link;
+                detailArea.classList.remove('hidden');
+            } else {
+                detailArea.classList.add('hidden');
+            }
+        }
+
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    </script>
+    <script>
+        // Disable right-click for content protection (optional, can be annoying for users)
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

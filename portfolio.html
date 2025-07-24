@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio - Uzair B2B Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* --- CSS Variables for Portfolio Page Themes --- */
+/* Default (Dark) Theme Variables */
+:root {
+    --page-bg: #1A202C; /* Gray-900 */
+    --header-bg: #2D3748; /* Gray-800 */
+    --text-primary: #E2E8F0; /* Gray-200 */
+    --text-secondary: #CBD5E1; /* Gray-300 */
+    --accent-color: #6366F1; /* Indigo-500 */
+    --accent-hover-color: #8B5CF6; /* Violet-500 */
+    --card-bg: #2D3748; /* Gray-800 */
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --heading-glow: rgba(139, 92, 246, 0.5); /* Purple glow */
+    --link-color: #A78BFA; /* Indigo-400 */
+    --link-hover-color: #C4B5FD; /* Indigo-300 */
+    --border-color: #4A5568; /* Gray-700 for borders */
+}
+
+/* Light Theme Variables (applied when 'html.light' class is active) */
+html.light {
+    --page-bg: #F8FAFC; /* Gray-50 */
+    --header-bg: #FFFFFF; /* White */
+    --text-primary: #1A202C; /* Gray-900 */
+    --text-secondary: #4A5568; /* Gray-700 */
+    --accent-color: #4F46E5; /* Indigo-600 */
+    --accent-hover-color: #4338CA; /* Indigo-700 */
+    --card-bg: #FFFFFF; /* White */
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --heading-glow: rgba(79, 70, 229, 0.2); /* Blue glow */
+    --link-color: #4F46E5; /* Indigo-600 */
+    --link-hover-color: #3730A3; /* Indigo-800 */
+    --border-color: #E2E8F0; /* Gray-200 for borders */
+}
+
+/* --- General Page Styling (using variables) --- */
+body {
+    background-color: var(--page-bg);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    /* Optional: If you uncommented Google Fonts */
+    /* font-family: 'Inter', sans-serif; */
+}
+
+header {
+    background-color: var(--header-bg);
+    transition: background-color 0.3s ease-in-out;
+    border-bottom: 1px solid var(--border-color); /* Subtle header border */
+}
+
+header a {
+    color: var(--text-secondary);
+}
+
+header a:hover {
+    color: var(--text-primary);
+}
+
+header a[href="portfolio.html"] { /* Specific style for the active portfolio link */
+    color: var(--link-color);
+}
+
+header button#theme-toggle {
+    background-color: var(--card-bg); /* Use card background for toggle */
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color); /* Subtle border */
+    box-shadow: 0 2px 8px var(--card-shadow);
+}
+
+header button#theme-toggle:hover {
+    background-color: var(--text-secondary); /* Darker on hover */
+    color: var(--text-primary);
+}
+
+/* --- Portfolio Section Styling --- */
+.portfolio-section {
+    background-color: var(--page-bg); /* Ensure section matches page background */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.portfolio-main-heading {
+    color: var(--text-primary);
+    text-shadow: 0 5px 20px var(--heading-glow); /* Dynamic glow based on theme */
+    letter-spacing: -0.03em;
+}
+
+/* --- Project Card Styling --- */
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 10px 25px var(--card-shadow);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    border: 1px solid var(--border-color); /* Subtle border */
+}
+
+.project-card:hover {
+    transform: translateY(-8px) scale(1.02); /* Lift and slight scale on hover */
+    box-shadow: 0 15px 40px var(--card-shadow), 0 0 20px var(--heading-glow); /* Deeper shadow with glow */
+}
+
+.project-card img {
+    /* Tailwind handles w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 */
+    filter: brightness(0.8) grayscale(0.2); /* Slightly muted initially */
+    transition: filter 0.5s ease-in-out;
+}
+
+.project-card:hover img {
+    filter: brightness(1) grayscale(0); /* Full brightness and color on hover */
+}
+
+.project-card .project-title {
+    color: var(--text-primary);
+}
+
+.project-card .project-description {
+    color: var(--text-secondary);
+}
+
+.project-card .project-link {
+    background-color: var(--accent-color);
+    color: var(--text-primary); /* Button text color */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.project-card .project-link:hover {
+    background-color: var(--accent-hover-color);
+}
+
+/* --- Load More Button Styling --- */
+.load-more-btn {
+    background-color: var(--accent-color);
+    color: var(--text-primary); /* Button text color */
+    box-shadow: 0 8px 20px var(--heading-glow); /* Shadow with glow */
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.load-more-btn:hover {
+    background-color: var(--accent-hover-color);
+    box-shadow: 0 12px 30px var(--heading-glow); /* More pronounced shadow */
+    transform: scale(1.05);
+}
+
+/* Aspect Ratio Fallback for older Tailwind or without @tailwindcss/aspect-ratio plugin */
+/* The HTML uses inline style 'padding-top: 56.25%;' which is generally more reliable */
+/* If you use the aspect-ratio plugin in Tailwind, you can remove this. */
+.aspect-w-16 {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+.aspect-w-16 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-900 text-white font-inter antialiased transition-colors duration-300 ease-in-out">
+
+    <header class="bg-gray-800 py-4 shadow-lg">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white hover:text-indigo-400 transition-colors duration-300">
+                Uzair B2B Services.
+            </a>
+            <nav class="flex items-center space-x-6">
+                <a href="index.html" class="text-gray-300 hover:text-white font-medium transition-colors duration-300">Home</a>
+                <a href="portfolio.html" class="text-indigo-400 font-medium transition-colors duration-300">Portfolio</a>
+                
+                <button id="theme-toggle" class="p-2 rounded-full bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <svg class="w-6 h-6 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.325 6.675l-.707-.707M6.675 6.675l-.707-.707m10.65 0l-.707.707M6.675 17.325l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                    <svg class="w-6 h-6 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section id="portfolio" class="py-16 portfolio-section">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-16 portfolio-main-heading">
+                Our Portfolio
+            </h1>
+            
+            <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                </div>
+
+            <div class="text-center mt-16">
+                <button id="load-more-projects" class="inline-flex items-center px-8 py-4 bg-indigo-600 text-white font-semibold rounded-full shadow-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition-all duration-300 ease-in-out text-lg transform hover:scale-105 load-more-btn">
+                    Load More Projects
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 py-8 text-center text-gray-400 text-sm shadow-inner">
+        <div class="container mx-auto px-6">
+            <p>&copy; <span id="current-year"></span> Uzair B2B Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM Content Loaded - script.js is running.");
+
+    // --- Theme Toggle Logic ---
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement; // Targets the <html> tag
+
+    if (themeToggleBtn) {
+        console.log("Theme toggle button found.");
+
+        // Check for saved theme preference on load
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            htmlElement.classList.add(savedTheme);
+            console.log(`Loaded theme from localStorage: ${savedTheme}`);
+        } else {
+            // Default to dark if no preference is saved or invalid
+            htmlElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark'); // Save default preference
+            console.log("No theme found in localStorage, defaulting to dark.");
+        }
+
+        // Add event listener for the toggle
+        themeToggleBtn.addEventListener('click', function() {
+            console.log("Theme toggle button clicked!");
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                htmlElement.classList.add('light');
+                localStorage.setItem('theme', 'light');
+                console.log("Switched to light theme.");
+            } else {
+                htmlElement.classList.remove('light');
+                htmlElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                console.log("Switched to dark theme.");
+            }
+        });
+    } else {
+        console.warn("Theme toggle button (#theme-toggle) not found on this page.");
+    }
+
+
+    // --- Current Year for Footer ---
+    const currentYearSpan = document.getElementById('current-year');
+    if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
+    } else {
+        console.warn("Element with ID 'current-year' not found.");
+    }
+
+    // --- Project Loading Logic (Placeholder) ---
+    // This function will load your project cards into the grid.
+    // Replace this with your actual project data and rendering logic.
+    function loadProjects() {
+        const projectGrid = document.getElementById('project-grid');
+        if (!projectGrid) {
+            console.log("Project grid (#project-grid) not found. Not loading projects (likely not on portfolio page).");
+            return;
+        }
+        console.log("Project grid found. Loading projects...");
+
+        // Example project data (replace with your actual data source)
+        const projects = [
+            { id: 1, title: "E-commerce Redesign", description: "A modern and responsive e-commerce platform built with React and Node.js.", image: "https://placehold.co/600x337/2D3748/E2E8F0?text=Project+1", link: "#" },
+            { id: 2, title: "AI Chatbot Integration", description: "Integrated a custom AI chatbot for customer support, improving user satisfaction.", image: "https://placehold.co/600x337/374151/E2E8F0?text=Project+2", link: "#" },
+            { id: 3, title: "Mobile App Development", description: "Developed a cross-platform mobile application for fitness tracking using Flutter.", image: "https://placehold.co/600x337/4B5563/E2E8F0?text=Project+3", link: "#" },
+            { id: 4, title: "Data Analytics Dashboard", description: "Created an interactive dashboard for visualizing complex business data, enabling faster insights.", image: "https://placehold.co/600x337/6B7280/E2E8F0?text=Project+4", link: "#" },
+            { id: 5, title: "Custom CRM Solution", description: "Designed and implemented a bespoke CRM system tailored to client's unique sales processes.", image: "https://placehold.co/600x337/9CA3AF/E2E8F0?text=Project+5", link: "#" },
+            { id: 6, title: "Blockchain Supply Chain", description: "Developed a secure blockchain solution for transparent and traceable supply chain management.", image: "https://placehold.co/600x337/D1D5DB/2D3748?text=Project+6", link: "#" }
+        ];
+
+        // Clear existing content (useful if you're dynamically loading more)
+        projectGrid.innerHTML = ''; 
+
+        projects.forEach(project => {
+            const projectCard = document.createElement('div');
+            // Using a combination of Tailwind classes and custom ones for consistency
+            projectCard.className = 'project-card rounded-xl shadow-xl overflow-hidden group'; 
+            projectCard.innerHTML = `
+                <div class="relative" style="padding-top: 56.25%;">
+                    <img src="${project.image}" alt="${project.title} Thumbnail" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 project-title">${project.title}</h3>
+                    <p class="text-sm mb-4 project-description">${project.description}</p>
+                    <a href="${project.link}" class="inline-block px-4 py-2 rounded-full text-sm transition-colors duration-300 project-link">View Details</a>
+                </div>
+            `;
+            projectGrid.appendChild(projectCard);
+        });
+        console.log("Projects loaded into grid.");
+    }
+
+    // Call loadProjects when the DOM content is fully loaded
+    // This ensures projects load on portfolio.html
+    loadProjects();
+
+    const loadMoreBtn = document.getElementById('load-more-projects');
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+            console.log("Load more projects button clicked!");
+            // Implement logic to load more projects here
+            // You might call loadProjects() again with different data or append more
+        });
+    } else {
+        console.log("Load more projects button not found.");
+    }
+});
+    </script>
+</body>
+</html>
