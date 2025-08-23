@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Google Site Verification & AdSense - Copied from GALLERY.HTML -->
+    <meta name="google-site-verification" content="l9l5QvjFSakUCbRz6lC-X-TfGQJOFxEbz-_iZQOJ35c" />
+    <meta name="google-adsense-account" content="ca-pub-4074130011096587">
+    <meta name="google-site-verification" content="qSZcROSBW4sFubwNpIYlMwvNYbQUA_2svJFPt3hfxls" />
+    <title>Admin Panel Login</title>
+    <!-- Meta Description & Keywords - Adapted for Admin Page -->
+    <meta name="description" content="Admin login portal for the Journalism and Mass Communication data management.">
+    <meta name="keywords" content="admin, login, portal, journalism, mass communication, MGKVP, Uzair B2B">
+
+    <!-- Favicon & Apple Touch Icon - Copied from GALLERY.HTML (assuming assets folder exists) -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Tailwind Configuration - Copied from GALLERY.HTML
+        tailwind.config = {
+            darkMode: 'class', // Enable dark mode with 'class' strategy
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00e1ff', // Light blue/cyan
+                        secondary: '#0032e6', // Darker blue
+                        darkBg: '#121212', // Very dark background
+                        darkCard: '#1a1a1a', // Slightly lighter dark card background
+                        lightBg: '#f0f2f5', // Light gray background
+                        lightCard: '#ffffff', // White card background
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for the theme toggle icon - Copied from GALLERY.HTML */
+        .theme-toggle-button {
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .theme-toggle-button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Ensure body takes full height for centering login box */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column; /* Allow header/footer to stack */
+        }
+
+        /* Main content wrapper to push footer down and center login box */
+        .main-content-wrapper {
+            flex-grow: 1; /* Takes up available space */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.25rem; /* p-5 */
+        }
+
+        /* Styles for password toggle icon container */
+        .password-input-container {
+            position: relative;
+            margin-bottom: 1.5rem; /* mb-6 */
+        }
+
+        .toggle-password-visibility {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #6b7280; /* gray-500 */
+            transition: color 0.2s ease-in-out;
+            padding: 4px; /* Add padding for easier clicking */
+        }
+
+        .toggle-password-visibility:hover {
+            color: theme('colors.primary');
+        }
+
+        .dark .toggle-password-visibility {
+            color: #9ca3af; /* gray-400 */
+        }
+
+        .dark .toggle-password-visibility:hover {
+            color: theme('colors.primary');
+        }
+    </style>
+</head>
+
+<body class="bg-lightBg text-gray-900 transition-colors duration-300 dark:bg-darkBg dark:text-white font-sans">
+    <!-- Navigation Bar - Copied and adapted from GALLERY.HTML -->
+    <nav class="bg-darkBg p-4 shadow-lg border-b-2 border-primary dark:bg-darkBg dark:border-primary">
+        <div class="container mx-auto flex justify-between items-center">
+            <a class="text-white text-2xl font-bold tracking-wide transition-colors duration-300 hover:text-primary" href="https://uzairb2b.github.io/home/index.html">UZAIR B2B</a>
+            <button id="themeToggle" class="theme-toggle-button text-white text-2xl focus:outline-none">
+                ☀️ <!-- Initial state, updated by JS -->
+            </button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation - Copied and adapted from GALLERY.HTML -->
+    <div class="container mx-auto mt-6 px-4">
+        <nav aria-label="breadcrumb">
+            <ol class="flex space-x-2 text-gray-600 dark:text-gray-300">
+                <li class="breadcrumb-item"><a href="index.html" class="text-blue-600 hover:underline dark:text-blue-400">Home</a></li>
+                <li class="breadcrumb-item active text-primary font-semibold" aria-current="page">Admin Login</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Main Content Wrapper for Login Box -->
+    <div class="main-content-wrapper">
+        <div class="login-box bg-lightCard dark:bg-darkCard p-8 rounded-lg shadow-xl w-full max-w-sm border border-gray-200 dark:border-gray-700">
+            <h2 class="text-3xl font-bold mb-6 text-center text-gray-900 dark:text-white">Admin Login</h2>
+            <input type="email" id="email" placeholder="Enter Admin Email" required
+                   class="block mb-4 p-3 w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+
+            <!-- Password Input with Toggle Icon -->
+            <div class="password-input-container">
+                <input type="password" id="password" placeholder="Enter Password" required
+                       class="block p-3 w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent pr-10">
+                <span class="toggle-password-visibility" id="togglePassword">
+                    <!-- Eye icon SVG (initially closed eye) -->
+                    <svg id="eyeOpen" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                    </svg>
+                    <svg id="eyeClosed" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.542-7 1.274-4.057 5.064-7 9.542-7 .75 0 1.478.138 2.175.375M14.25 14.25a3 3 0 11-6-6 3 3 0 016 6z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </span>
+            </div>
+
+            <button onclick="login()"
+                    class="bg-primary hover:bg-secondary text-darkBg dark:text-white font-bold py-3 px-6 rounded-full w-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:shadow-outline">
+                Login
+            </button>
+            <div class="error text-red-500 dark:text-red-400 text-center mt-4" id="error-msg"></div>
+        </div>
+    </div>
+
+    <!-- Footer Section - Copied from GALLERY.HTML -->
+    <footer id="footer" class="bg-darkBg py-6 text-center text-gray-300 mt-12 dark:bg-darkBg dark:text-gray-400">
+        <div class="container mx-auto px-4">
+            <div class="text-sm">
+                <p>&copy; <span>Copyright</span> <strong class="px-1 text-primary">UZAIR AHMED, Varanasi</strong> <span>All Rights Reserved</span></p>
+            </div>
+            <div class="mt-2 text-xs">
+                Designed by <a href="https://uzairb2b.blogspot.com/" class="text-primary hover:underline">Uzair Ahmed</a> Distributed by <a href="https://www.instagram.com/uzairvibes" class="text-primary hover:underline">Uzair B2B Services</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS0pxsk37_S0rxY6LM81HpTDt8ZzMv52eyKmmFRI4YHobycKyU_OGwJtPrstm7vuL5fsdh_AyxL9_ni/pub?gid=247131137&single=true&output=csv";
+
+        let adminData = [];
+
+        // Load and parse CSV
+        async function loadCSV() {
+            try {
+                const res = await fetch(CSV_URL);
+                const text = await res.text();
+                const rows = text.trim().split('\n').slice(1); // skip headers
+
+                rows.forEach(row => {
+                    const [email, password] = row.split(',');
+                    if (email && password) {
+                        adminData.push({ email: email.trim(), password: password.trim() });
+                    }
+                });
+            } catch (error) {
+                console.error("Error loading admin data:", error);
+                document.getElementById("error-msg").innerText = "Failed to load admin data. Please try again later.";
+            }
+        }
+
+        // Run on page load
+        loadCSV();
+
+        async function login() {
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const errorMsg = document.getElementById("error-msg");
+
+            // Clear previous error message
+            errorMsg.innerText = "";
+
+            const isValid = adminData.some(admin =>
+                admin.email === email && admin.password === password
+            );
+
+            if (isValid) {
+                window.location.href = "https://docs.google.com/spreadsheets/d/13GcSc5zXmcJsHD358JH24faYtBcIPR7cFw1Suqy4S0I/edit?usp=sharing";
+            } else {
+                errorMsg.innerText = "Invalid email or password.";
+            }
+        }
+
+        // Theme Toggle functionality - Copied from GALLERY.HTML
+        document.addEventListener("DOMContentLoaded", function () {
+            const themeToggle = document.getElementById('themeToggle');
+            const htmlTag = document.documentElement;
+
+            // Set initial theme based on localStorage or default to light
+            const currentTheme = localStorage.getItem('theme');
+            if (currentTheme) {
+                htmlTag.classList.remove('light', 'dark');
+                htmlTag.classList.add(currentTheme);
+                themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+            } else {
+                htmlTag.classList.add('light'); // Default to light theme
+                themeToggle.textContent = '🌙';
+            }
+
+            themeToggle.addEventListener('click', () => {
+                if (htmlTag.classList.contains('light')) {
+                    htmlTag.classList.remove('light');
+                    htmlTag.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                    themeToggle.textContent = '☀️';
+                } else {
+                    htmlTag.classList.remove('dark');
+                    htmlTag.classList.add('light');
+                    localStorage.setItem('theme', 'light');
+                    themeToggle.textContent = '🌙';
+                }
+            });
+
+            // Password Visibility Toggle
+            const togglePassword = document.getElementById('togglePassword');
+            const passwordInput = document.getElementById('password');
+            const eyeOpen = document.getElementById('eyeOpen');
+            const eyeClosed = document.getElementById('eyeClosed');
+
+            togglePassword.addEventListener('click', function () {
+                // Toggle the type attribute
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+
+                // Toggle the eye icon visibility
+                eyeOpen.classList.toggle('hidden');
+                eyeClosed.classList.toggle('hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>
