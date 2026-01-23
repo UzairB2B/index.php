@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Packages - Uzair B2B Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* --- CSS Variables for Theme --- */
+        :root {
+            --page-bg: #1A202C;
+            --header-bg: #2D3748;
+            --text-primary: #E2E8F0;
+            --text-secondary: #CBD5E1;
+            --accent-color: #6366F1;
+            --accent-hover-color: #8B5CF6;
+            --card-bg: #2D3748;
+            --card-shadow: rgba(0, 0, 0, 0.4);
+            --heading-glow: rgba(139, 92, 246, 0.5);
+            --link-color: #A78BFA;
+            --border-color: #4A5568;
+        }
+
+        html.light {
+            --page-bg: #F8FAFC;
+            --header-bg: #FFFFFF;
+            --text-primary: #1A202C;
+            --text-secondary: #4A5568;
+            --accent-color: #4F46E5;
+            --accent-hover-color: #4338CA;
+            --card-bg: #FFFFFF;
+            --card-shadow: rgba(0, 0, 0, 0.1);
+            --heading-glow: rgba(79, 70, 229, 0.2);
+            --link-color: #4F46E5;
+            --border-color: #E2E8F0;
+        }
+
+        body {
+            background-color: var(--page-bg);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: var(--header-bg);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .main-heading {
+            text-shadow: 0 5px 20px var(--heading-glow);
+        }
+
+        .package-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 25px var(--card-shadow);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @media (min-width: 768px) {
+            .package-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 40px var(--card-shadow), 0 0 20px var(--heading-glow);
+            }
+        }
+
+        .cta-button {
+            background-color: var(--accent-color);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-hover-color);
+            transform: scale(1.02);
+        }
+
+        /* Modal specific */
+        .modal-content {
+            background-color: var(--card-bg);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .input-field {
+            background-color: var(--page-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        /* Prevent background scroll when modal is open */
+        body.modal-open {
+            overflow: hidden;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="antialiased">
+
+    <header class="py-3 md:py-4 sticky top-0 z-50 shadow-lg backdrop-blur-md">
+        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+            <a href="index.html" class="text-xl md:text-2xl font-bold flex items-center gap-2 transition-colors duration-300">
+                
+                <span class="hidden sm:inline">Uzair B2B Services.</span>
+                <span class="sm:hidden">Uzair.</span>
+            </a>
+            <nav class="flex items-center space-x-4 md:space-x-6">
+                <a href="index.html" class="text-gray-400 hover:text-indigo-400 text-sm md:text-base font-medium transition-colors">Home</a>
+                <a href="#" class="text-indigo-400 text-sm md:text-base font-medium transition-colors">Packages</a>
+                <button id="theme-toggle" class="p-2 rounded-full bg-gray-700/50 hover:bg-gray-600 text-gray-300 transition-colors focus:outline-none">
+                    <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.325 6.675l-.707-.707M6.675 6.675l-.707-.707m10.65 0l-.707.707M6.675 17.325l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="py-10 md:py-16">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-10 md:mb-16">
+                <h1 class="text-3xl md:text-5xl font-extrabold mb-4 main-heading px-2">
+                    Service Packages
+                </h1>
+                <p class="text-gray-400 max-w-2xl mx-auto text-base md:text-lg px-4">
+                    Choose the partnership model that best fits your business goals.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-5xl mx-auto">
+                <!-- Package 1 -->
+                <div class="package-card rounded-2xl p-6 md:p-8 flex flex-col h-full group">
+                    <div class="mb-6">
+                        <span class="text-indigo-400 font-bold uppercase tracking-widest text-[10px] md:text-xs">Tier 01</span>
+                        <h2 class="text-2xl md:text-3xl font-bold mt-2">Growth Partner</h2>
+                        <p class="text-gray-400 mt-2 text-sm md:text-base">The Startup Accelerator Model</p>
+                    </div>
+                    
+                    <ul class="space-y-3 md:space-y-4 mb-8 md:mb-10 flex-grow">
+                        <li class="flex items-start gap-3 text-sm md:text-base">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1"></i>
+                            <span>Lifetime Partnership</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm md:text-base">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1"></i>
+                            <span>Minimal Upfront Costs</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm md:text-base">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1"></i>
+                            <span>10% Equity/Revenue Share</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm md:text-base">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1"></i>
+                            <span>Full-stack Tech & Brand Strategy</span>
+                        </li>
+                    </ul>
+
+                    <button onclick="openEnquiry('Growth Partner')" class="cta-button w-full py-3.5 md:py-4 rounded-xl font-bold text-white shadow-lg active:scale-95 transition-transform">
+                        Partner With Us
+                    </button>
+                </div>
+
+                <!-- Package 2 -->
+                <div class="package-card rounded-2xl p-6 md:p-8 flex flex-col h-full group">
+                    <div class="mb-6">
+                        <span class="text-indigo-400 font-bold uppercase tracking-widest text-[10px] md:text-xs">Tier 02</span>
+                        <h2 class="text-2xl md:text-3xl font-bold mt-2">Execution Model</h2>
+                        <p class="text-gray-400 mt-2 text-sm md:text-base">Professional Project Delivery</p>
+                    </div>
+                    
+                    <ul class="space-y-3 md:space-y-4 mb-8 md:mb-10 flex-grow">
+                        <li class="flex items-start gap-3 text-sm md:text-base">
+                            <i class="fas fa-arrow-right text-indigo-500 mt-1"></i>
+                            <span>Custom Web Development</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm md:text-base">
+                            <i class="fas fa-arrow-right text-indigo-500 mt-1"></i>
+                            <span>Targeted Marketing Campaigns</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm md:text-base">
+                            <i class="fas fa-arrow-right text-indigo-500 mt-1"></i>
+                            <span>UI/UX & Graphic Design</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm md:text-base">
+                            <i class="fas fa-arrow-right text-indigo-500 mt-1"></i>
+                            <span>Pay-As-You-Go Flexibility</span>
+                        </li>
+                    </ul>
+
+                    <button onclick="openEnquiry('Execution Model')" class="cta-button w-full py-3.5 md:py-4 rounded-xl font-bold text-white shadow-lg active:scale-95 transition-transform">
+                        Get Custom Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-8 md:py-10 text-center border-t border-gray-800/50">
+        <div class="container mx-auto px-4">
+            <p class="text-gray-500 text-xs md:text-sm">
+                &copy; <span id="year"></span>© 2026 Uzair B2B Services. <br class="sm:hidden"> All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Enquiry Modal -->
+    <div id="modalOverlay" class="fixed inset-0 bg-black/70 backdrop-blur-md z-[100] hidden flex items-end sm:items-center justify-center p-0 sm:p-4">
+        <div class="modal-content rounded-t-3xl sm:rounded-3xl p-6 md:p-8 w-full max-w-md shadow-2xl relative animate-in slide-in-from-bottom sm:slide-in-from-none duration-300">
+            <button onclick="closeEnquiry()" class="absolute top-4 right-4 sm:top-6 sm:right-6 text-gray-400 hover:text-white transition p-2">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            
+            <h3 class="text-xl md:text-2xl font-bold mb-1">Enquire Now</h3>
+            <p id="pkgLabel" class="text-indigo-400 font-semibold mb-6 text-sm md:text-base"></p>
+
+            <form id="enquiryForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-semibold mb-2">Full Name / Brand</label>
+                    <input type="text" id="name" required class="input-field w-full rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-indigo-500 transition" placeholder="John Doe">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold mb-2">Service Interest</label>
+                    <select id="service" class="input-field w-full rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-indigo-500 transition">
+                        <option>Web Development</option>
+                        <option>Marketing / Ads</option>
+                        <option>Graphic Design</option>
+                        <option>Business Consulting</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-[#25D366] text-white font-bold py-3.5 md:py-4 rounded-xl flex items-center justify-center gap-3 hover:brightness-110 transition shadow-xl mt-4 active:scale-95">
+                    <i class="fab fa-whatsapp text-xl md:text-2xl"></i>
+                    Connect via WhatsApp
+                </button>
+                <p class="text-[10px] text-center text-gray-500 mt-2">Typical response time: < 2 hours</p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        // Initialize theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        htmlElement.className = savedTheme;
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.replace('dark', 'light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                htmlElement.classList.replace('light', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Modal Logic
+        const modal = document.getElementById('modalOverlay');
+        const pkgLabel = document.getElementById('pkgLabel');
+        let selectedPkg = "";
+
+        function openEnquiry(pkg) {
+            selectedPkg = pkg;
+            pkgLabel.innerText = "Package: " + pkg;
+            modal.classList.remove('hidden');
+            document.body.classList.add('modal-open');
+        }
+
+        function closeEnquiry() {
+            modal.classList.add('hidden');
+            document.body.classList.remove('modal-open');
+        }
+
+        document.getElementById('enquiryForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const service = document.getElementById('service').value;
+            const phone = "919335723334";
+            const text = `Hi Uzair B2B! I'm ${name}. I am interested in the *${selectedPkg}* specifically for *${service}*. Let's talk!`;
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, '_blank');
+            closeEnquiry();
+        });
+
+        // Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Close on backdrop
+        modal.addEventListener('click', (e) => { if(e.target === modal) closeEnquiry(); });
+    </script>
+</body>
+</html>
